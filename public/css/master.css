@@ -1,0 +1,34 @@
+html, body, .wrapper, .text-img {
+	height:100%;
+  text-align: center;
+}
+
+.wrapper{
+  max-width: 500px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.title{
+  font-family: 'Fredoka One', cursive;
+  font-size: 3em;
+}
+
+.long-text{
+  font-family: 'Schoolbell', cursive;
+  font-size: 1.5em;
+  max-width: 40%;
+  float: left;
+  padding-top: 2em;
+}
+
+.long-text p{
+  margin-top:0.5em;
+}
+
+img {
+	max-width:60%;
+	max-height:80%;
+	width:auto;
+	height:auto;
+}
