@@ -4,19 +4,20 @@ html, body, .wrapper, .text-img {
 }
 
 .wrapper{
-  max-width: 500px;
   display: inline-block;
   margin: 0 auto;
+  padding-top: 2em;
 }
 
 .title{
-  font-family: 'Fredoka One', cursive;
-  font-size: 3em;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 4em;
+  font-weight: 700;
 }
 
 .long-text{
   font-family: 'Schoolbell', cursive;
-  font-size: 1.5em;
+  font-size: 2em;
   max-width: 40%;
   float: left;
   padding-top: 2em;
@@ -31,4 +32,12 @@ img {
 	max-height:80%;
 	width:auto;
 	height:auto;
+}
+
+.next-btn{
+  padding: 0.2em;
+  border-radius: 25px;
+  margin-top: 20px;
+  background-color: #448821;
+  color:#fff;
 }
