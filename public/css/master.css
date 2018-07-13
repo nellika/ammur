@@ -16,14 +16,24 @@ html, body, .wrapper, .text-img, .actions {
   margin-bottom:10%;
 }
 
-.long-text{
+.long-text, .actions button{
   font-family: 'Schoolbell', cursive;
-  font-size: 2em;
-  padding-top: 2em;
+  font-size: 3em;
 }
 
 .long-text p{
   margin-top:0.5em;
+}
+
+.input-pwd{
+	display: none;
+}
+
+.input-pwd #pwd{
+	height: 4em;
+	width: 69%;
+	margin: 2em auto;
+	font-size: 3em;
 }
 
 .actions{
@@ -31,6 +41,7 @@ html, body, .wrapper, .text-img, .actions {
 	max-width: 40%;
 	float: left;
 	text-align: center;
+	padding-top: 9em;
 }
 
 .actions button{
@@ -38,16 +49,23 @@ html, body, .wrapper, .text-img, .actions {
 	height: 3em;
 	padding: 0.2em;
   border-radius: 25px;
-  margin-top: 4em;
+  margin: 1em;
   color:#fff;
 }
 
-.next-btn{
+.next-btn, .back-btn{
   background-color: #448821;
+}
+.next-btn:active, .next-btn:hover,
+.back-btn:active, .back-btn:hover{
+	background-color:#55af54f2;
 }
 
 .prev-btn{
 	background-color: #88212b;
+}
+.prev-btn:active, .prev-btn:hover{
+	background-color:#af545cf2;
 }
 
 img {
