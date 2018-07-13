@@ -1,4 +1,4 @@
-html, body, .wrapper, .text-img {
+html, body, .wrapper, .text-img, .actions {
 	height:100%;
   text-align: center;
 }
@@ -19,8 +19,6 @@ html, body, .wrapper, .text-img {
 .long-text{
   font-family: 'Schoolbell', cursive;
   font-size: 2em;
-  max-width: 40%;
-  float: left;
   padding-top: 2em;
 }
 
@@ -28,17 +26,33 @@ html, body, .wrapper, .text-img {
   margin-top:0.5em;
 }
 
+.actions{
+	width: 40%;
+	max-width: 40%;
+	float: left;
+	text-align: center;
+}
+
+.actions button{
+	width: 80%;
+	height: 3em;
+	padding: 0.2em;
+  border-radius: 25px;
+  margin-top: 4em;
+  color:#fff;
+}
+
+.next-btn{
+  background-color: #448821;
+}
+
+.prev-btn{
+	background-color: #88212b;
+}
+
 img {
 	max-width:60%;
 	max-height:80%;
 	width:auto;
 	height:auto;
-}
-
-.next-btn{
-  padding: 0.2em;
-  border-radius: 25px;
-  margin-top: 20px;
-  background-color: #448821;
-  color:#fff;
 }
