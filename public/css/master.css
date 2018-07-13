@@ -30,10 +30,12 @@ html, body, .wrapper, .text-img, .actions {
 }
 
 .input-pwd #pwd{
+	font-family: 'Schoolbell', cursive;
 	height: 4em;
 	width: 69%;
 	margin: 2em auto;
 	font-size: 3em;
+	text-align: center;
 }
 
 .actions{
@@ -73,4 +75,22 @@ img {
 	max-height:80%;
 	width:auto;
 	height:auto;
+}
+
+.invalid-pwd{
+	position: fixed;
+  top: 14em;
+	overflow: hidden;
+}
+
+.invalid-pwd p{
+	background-color: #bd5421;
+	font-family: 'Philosopher', sans-serif;
+  font-size: 4em;
+	padding: 1em;
+	color:#fff;
+}
+
+.no-show {
+	left: -120%;
 }
