@@ -193,6 +193,31 @@ function setOneButton(){
 
 $(function() {
     console.log( "Page is ready! ^^" );
-    setTwoButtons();
-    setStep0();
+    var ruha = $('.sec-holder').attr('kabat');
+
+    if(ruha == "teli"){
+      secu();
+      $( "#guardian" ).click(function() {
+        var inputValue = $('#initpwd').val();
+        if(inputValue == evszak){
+          letsDoIt();
+        }
+      });
+    }else{
+      letsDoIt();
+    }
 });
+
+function secu(){
+  $('body').append('<div class="guards"><div><input type="text" name="initpwd" id="initpwd" placeholder="Insert secret code"></div>' +
+                     '<img id="guardian" src="img/guard.jpg" alt="Guardian of the secret page"></div>');
+}
+
+function letsDoIt(){
+  $('.wrapper').css('display','block');
+  $('.guards').css('display','none');
+  setTwoButtons();
+  setStep0();
+}
+
+var evszak = 'kacsa123';

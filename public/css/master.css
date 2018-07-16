@@ -94,3 +94,7 @@ img {
 .no-show {
 	left: -120%;
 }
+
+.wrapper{
+	display: none;
+}
