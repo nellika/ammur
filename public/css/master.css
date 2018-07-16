@@ -84,8 +84,10 @@ img {
 
 .invalid-pwd{
 	position: fixed;
-  top: 14em;
+  top: 0;
 	overflow: hidden;
+	height: 100%;
+	width:100%;
 }
 
 .invalid-pwd p{
@@ -96,10 +98,71 @@ img {
 	color:#fff;
 }
 
-.no-show {
+.invalid-pwd div{
+	background: #fff;
+	height: 100%;
+}
+
+.invalid-pwd div button{
+	height: 3em;
+	padding: 0.2em;
+	border-radius: 25px;
+	font-size: 3em;
+	color:#fff;
+	font-family: 'Schoolbell', cursive;
+	margin: 1em;
+	background-color: #ab501a;
+	padding: 0 1em;
+	border: 3px solid #fff;
+}
+
+@keyframes alertmovein
+{
+  0% {left: -120%;}
+  50% {left: -2%;}
+  90% {left:-10%;}
+  100% {left: 0;}
+}
+
+@keyframes alertmoveout
+{
+  0% {left: 0;}
+  100% {left: -120%;}
+}
+
+.invalid-pwd.show{
+	animation: alertmovein 2s ease-in-out forwards;
+}
+
+.initial{
 	left: -120%;
 }
 
-.wrapper,.step-holder{
+.no-show{
+	animation: alertmoveout 2s ease-in-out forwards;
+}
+
+.wrapper,.step-holder,.sec-holder{
 	display: none;
+}
+
+.guards{
+	padding: 2em;
+	font-family: 'Schoolbell', cursive;
+}
+
+.guards img{
+	margin-bottom: 2em;
+}
+
+.guards input{
+	font-size: 2em;
+	text-align: center;
+	font-family: 'Schoolbell', cursive;
+	border-right: 2px solid #186318;
+}
+
+.guards p{
+	padding: 1em;
+	font-size: 3em;
 }

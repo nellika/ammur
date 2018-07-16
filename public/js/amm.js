@@ -151,7 +151,7 @@ function nextStep(){
     fn();
     $('.input-pwd #pwd').val('');
   }else{
-    alert("WTF?");
+    $(".invalid-pwd").removeClass('initial no-show').addClass("show");
   }
 
 }
@@ -188,6 +188,12 @@ function setOneButton(){
       toggleInput('show');
       setTwoButtons();
       fn();
+  });
+}
+
+function addClickToAlert(){
+  $( ".retry" ).click(function() {
+    $(".invalid-pwd").removeClass('show').addClass("no-show");
   });
 }
 
@@ -228,8 +234,9 @@ $(function() {
 
 
 function secu(){
-  $('body').append('<div class="guards"><div><input type="text" name="initpwd" id="initpwd" placeholder="Insert secret code"></div>' +
-                     '<img id="guardian" src="img/guard-50.jpg" alt="Guardian of the secret page"></div>');
+  $('body').append('<div class="guards"><img id="guardian" src="img/guard-50.jpg" alt="Guardian of the secret page">'+
+                   '<div><input type="text" name="initpwd" id="initpwd" placeholder="Insert secret code"></div>' +
+                   '<p>Btw. Aki kíváncsi, hamar megöregszik, Ammurom ;)</p></div>');
 }
 
 function letsDoIt(){
@@ -238,6 +245,7 @@ function letsDoIt(){
   stupInputField();
   setTwoButtons();
   setStep0();
+  addClickToAlert();
 }
 
 var evszak = 'kacsa123';
