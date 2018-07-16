@@ -16,6 +16,10 @@ html, body, .wrapper, .text-img, .actions {
   margin-bottom:10%;
 }
 
+.long-text{
+	margin-bottom: 2em;
+}
+
 .long-text, .actions button{
   font-family: 'Schoolbell', cursive;
   font-size: 3em;
@@ -36,6 +40,7 @@ html, body, .wrapper, .text-img, .actions {
 	margin: 2em auto;
 	font-size: 3em;
 	text-align: center;
+	border: 3px solid #55af54f2;
 }
 
 .actions{
@@ -43,7 +48,7 @@ html, body, .wrapper, .text-img, .actions {
 	max-width: 40%;
 	float: left;
 	text-align: center;
-	padding-top: 9em;
+	/*padding-top: 9em;*/
 }
 
 .actions button{
@@ -95,6 +100,6 @@ img {
 	left: -120%;
 }
 
-.wrapper{
+.wrapper,.step-holder{
 	display: none;
 }

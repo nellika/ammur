@@ -7,7 +7,7 @@ function setStep0(){
                        '<p>Készen állsz?</p>');
   $('.next-btn').text("I'm in!");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/hi.jpg");
+  $('.text-img img').attr("src","img/hi-50.jpg");
   $('.text-img img').attr("alt","Link says hi to your birthday");
 
 }
@@ -23,7 +23,7 @@ function setStep1(){
                      );
   $('.next-btn').text("Jelentem, ettem!");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/hungry.jpg");
+  $('.text-img img').attr("src","img/hungry-50.jpg");
   $('.text-img img').attr("alt","Hungry adventurer");
 
 }
@@ -37,7 +37,7 @@ function setStep2(){
                      );
   $('.next-btn').text("Megvan!");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/bpack.jpg");
+  $('.text-img img').attr("src","img/bpack-50.jpg");
   $('.text-img img').attr("alt","Adventurer with backpack");
 
 }
@@ -53,7 +53,7 @@ function setStep3(){
                      );
   $('.next-btn').text("Indul a munka!");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/work.jpg");
+  $('.text-img img').attr("src","img/work-50.jpg");
   $('.text-img img').attr("alt","The hero starts working");
 
 }
@@ -71,7 +71,7 @@ function setStep4(){
                      );
   $('.next-btn').text("Megvacsiztam.");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/fight.jpg");
+  $('.text-img img').attr("src","img/fight-50.jpg");
   $('.text-img img').attr("alt","The hero is fighting");
 
 }
@@ -85,7 +85,7 @@ function setStep5(){
                      );
   $('.next-btn').text("Desszerthas.");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/zelda.jpg");
+  $('.text-img img').attr("src","img/zelda-50.jpg");
   $('.text-img img').attr("alt","Loyal buddy");
 
 }
@@ -99,7 +99,7 @@ function setStep6(){
                      );
   $('.next-btn').text("Wááá!");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/dance.jpg");
+  $('.text-img img').attr("src","img/dance-50.jpg");
   $('.text-img img').attr("alt","Dancing buddy");
 
 }
@@ -113,7 +113,7 @@ function setStep7(){
                      );
   $('.next-btn').text("Vége?");
   $('.prev-btn').text("Nah...");
-  $('.text-img img').attr("src","img/sleep.jpg");
+  $('.text-img img').attr("src","img/sleep-50.jpg");
   $('.text-img img').attr("alt","Dancing buddy");
 
 }
@@ -124,7 +124,7 @@ function setStep8(){
   $('.input-pwd').css('display','none');
   $('.actions').css('display','none');
   $('.text-img img').css('max-width','100%');
-  $('.text-img img').attr("src","img/happy.jpg");
+  $('.text-img img').attr("src","img/happy-50.jpg");
   $('.text-img img').attr("alt","Dancing buddy");
 
 }
@@ -144,6 +144,7 @@ function nextStep(){
   var inputValue = $('.input-pwd #pwd').val();
 
   if(passwords[getNextStep] == inputValue){
+    scrollTop();
     $('.step-holder').text(next);
     var fn = window[getNextStep];
     toggleInput('show');
@@ -162,7 +163,7 @@ function negativeStep(){
   $('.long-text').html('<p>Hm... talán még nem értél meg a kalandra?</p>' +
                        '<p></p>');
   $('.back-btn').text("Folytatom!");
-  $('.text-img img').attr("src","img/wrong2.jpg");
+  $('.text-img img').attr("src","img/wrong2-50.jpg");
   $('.text-img img').attr("alt","Not a good direction");
 }
 
@@ -184,12 +185,28 @@ function setOneButton(){
       var currentStep = $('.step-holder').text();
       var resetStep = 'setStep' + currentStep;
       var fn = window[resetStep];
+      toggleInput('show');
       setTwoButtons();
       fn();
   });
 }
 
+function stupInputField(){
+  var input = $("#pwd");
 
+  input.keyup(function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      $( ".next-btn" ).click();
+    }
+  });
+}
+
+function scrollTop(){
+  $("html, body").animate({
+        scrollTop: 0
+    }, 400);
+}
 
 $(function() {
     console.log( "Page is ready! ^^" );
@@ -208,14 +225,17 @@ $(function() {
     }
 });
 
+
+
 function secu(){
   $('body').append('<div class="guards"><div><input type="text" name="initpwd" id="initpwd" placeholder="Insert secret code"></div>' +
-                     '<img id="guardian" src="img/guard.jpg" alt="Guardian of the secret page"></div>');
+                     '<img id="guardian" src="img/guard-50.jpg" alt="Guardian of the secret page"></div>');
 }
 
 function letsDoIt(){
   $('.wrapper').css('display','block');
   $('.guards').css('display','none');
+  stupInputField();
   setTwoButtons();
   setStep0();
 }
