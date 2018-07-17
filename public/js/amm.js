@@ -13,8 +13,9 @@ function setStep0(){
 }
 
 function setStep1(){
-  $('.title').text('Éhes vándor nem jut messzire...');
-  $('.long-text').html('<p>Indulnál már, tudom,</p>' +
+  changeText('Éhes vándor nem jut messzire...');
+  /*$('.title').text('Éhes vándor nem jut messzire...');*/
+  changeHTML('<p>Indulnál már, tudom,</p>' +
                        '<p>De mi lesz így az úton?</p><br>' +
                        '<p>Szükség van energiára</p>' +
                        '<p>Vadászat ennek az ára!</p><br>' +
@@ -29,8 +30,9 @@ function setStep1(){
 }
 
 function setStep2(){
-  $('.title').text('No de a felszerelés?');
-  $('.long-text').html('<p>Mielőtt kilépnél a házból,</p>' +
+  changeText('No de a felszerelés?');
+  /*$('.title').text('No de a felszerelés?');*/
+  changeHTML('<p>Mielőtt kilépnél a házból,</p>' +
                        '<p>A kamrát nézd meg jól!</p><br>' +
                        '<p>Találsz ott foltos zsákot</p>' +
                        '<p>Rakhatod bele kis kardod.</p><br>'
@@ -43,8 +45,9 @@ function setStep2(){
 }
 
 function setStep3(){
-  $('.title').text('Nehéz a munka...');
-  $('.long-text').html('<p>Neki vághatsz most már!</p>' +
+  changeText('Nehéz a munka...');
+  /*$('.title').text('Nehéz a munka...');*/
+  changeHTML('<p>Neki vághatsz most már!</p>' +
                        '<p>A vonat ugyan nem vár...</p><br>' +
                        '<p>Munkahelyed üresnek tűnhet.</p>' +
                        '<p>Kis szekrényed azért nézd meg!</p><br>' +
@@ -59,8 +62,9 @@ function setStep3(){
 }
 
 function setStep4(){
-  $('.title').text('Harc a munkában...');
-  $('.long-text').html('<p>Dolgozni sokat kell...</p>' +
+  changeText('Harc a munkában...');
+  /*$('.title').text('Harc a munkában...');*/
+  changeHTML('<p>Dolgozni sokat kell...</p>' +
                        '<p>Délután 5-ig a harcos csak gépel.</p><br>' +
                        '<p>Amint vége az izgalmaknak,</p>' +
                        '<p>Adj egy esélyt olaszunknak.</p><br>' +
@@ -77,8 +81,9 @@ function setStep4(){
 }
 
 function setStep5(){
-  $('.title').text('A harcos el nem fárad!');
-  $('.long-text').html('<p>A vacsora kissé felpörgetett,</p>' +
+  changeText('A harcos el nem fárad!');
+  /*$('.title').text('A harcos el nem fárad!');*/
+  changeHTML('<p>A vacsora kissé felpörgetett,</p>' +
                        '<p>Ideje megnézni a desszertet.</p><br>' +
                        '<p>Kérd hűséges társad segítségét.</p>' +
                        '<p>Mutassa meg a kis sütikéjét.</p><br>'
@@ -91,8 +96,9 @@ function setStep5(){
 }
 
 function setStep6(){
-  $('.title').text('Indulás haza!');
-  $('.long-text').html('<p>Bár jó volt kint,</p>' +
+  changeText('Indulás haza!');
+  /*$('.title').text('Indulás haza!');*/
+  changeHTML('<p>Bár jó volt kint,</p>' +
                        '<p>Nézzük meg, otthon, hogy, s mint</p><br>' +
                        '<p>Lehet, hogy a TV mellett</p>' +
                        '<p>Meg kéne nézni a szekrényeket?</p><br>'
@@ -105,8 +111,9 @@ function setStep6(){
 }
 
 function setStep7(){
-  $('.title').text('Végső próba');
-  $('.long-text').html('<p>Hosszú nap, sok fáradalom,</p>' +
+  changeText('Végső próba');
+  /*$('.title').text('Végső próba');*/
+  changeHTML('<p>Hosszú nap, sok fáradalom,</p>' +
                        '<p>Ideje már aludnom.</p><br>' +
                        '<p>Vagy lehet meg kéne tekintenem,</p>' +
                        '<p>Mit rejtettek az ingembe?</p><br>'
@@ -119,8 +126,9 @@ function setStep7(){
 }
 
 function setStep8(){
-  $('.title').text('Itt a vége...!');
-  $('.long-text').html('<p>Boldog születésnapot kalandorom, Ammurom!</p>');
+  changeText('Itt a vége...!');
+  /*$('.title').text('Itt a vége...!');*/
+  changeHTML('<p>Boldog születésnapot kalandorom, Ammurom!</p>');
   $('.input-pwd').css('display','none');
   $('.actions').css('display','none');
   $('.text-img img').css('max-width','100%');
@@ -157,10 +165,12 @@ function nextStep(){
 }
 
 function negativeStep(){
+  scrollTop();
   setOneButton();
   toggleInput('hide');
   $('.title').text('Something went wrong...');
   $('.long-text').html('<p>Hm... talán még nem értél meg a kalandra?</p>' +
+                       '<p>Ha segítség kell, hívj! ^^</p>' +
                        '<p></p>');
   $('.back-btn').text("Folytatom!");
   $('.text-img img').attr("src","img/wrong2-50.jpg");
@@ -246,6 +256,18 @@ function letsDoIt(){
   setTwoButtons();
   setStep0();
   addClickToAlert();
+}
+
+function changeText(txt){
+  $('.title').fadeOut(500, function() {
+        $(this).text(txt).fadeIn(500);
+  });
+}
+
+function changeHTML(html){
+  $('.long-text').fadeOut(500, function() {
+        $(this).html(html).fadeIn(500);
+  });
 }
 
 var evszak = 'kacsa123';
