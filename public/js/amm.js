@@ -67,10 +67,10 @@ function setStep4(){
   changeHTML('<p>Dolgozni sokat kell...</p>' +
                        '<p>Délután 5-ig a harcos csak gépel.</p><br>' +
                        '<p>Amint vége az izgalmaknak,</p>' +
-                       '<p>Adj egy esélyt olaszunknak.</p><br>' +
-                       '<p>Van egy hely, hol nagy az étel,</p>' +
+                       '<p>Adj egy esélyt egy kis japánnak.</p><br>' +
+                       '<p>Van egy hely, hol sok az étel,</p>' +
                        '<p>SZÉP kártyánknak ez nem tétel.</p>' +
-                       '<p>6-kor keresd vacsorádat</p>' +
+                       '<p>5-kor keresd vacsorádat</p>' +
                        '<p>Addig végezd csak a munkádat.</p>'
                      );
   $('.next-btn').text("Megvacsiztam.");
@@ -121,7 +121,7 @@ function setStep7(){
   $('.next-btn').text("Vége?");
   $('.prev-btn').text("Nah...");
   $('.text-img img').attr("src","img/sleep-50.jpg");
-  $('.text-img img').attr("alt","Dancing buddy");
+  $('.text-img img').attr("alt","Sleepy?");
 
 }
 
@@ -133,7 +133,7 @@ function setStep8(){
   $('.actions').css('display','none');
   $('.text-img img').css('max-width','100%');
   $('.text-img img').attr("src","img/happy-50.jpg");
-  $('.text-img img').attr("alt","Dancing buddy");
+  $('.text-img img').attr("alt","Happy adventurer");
 
 }
 
